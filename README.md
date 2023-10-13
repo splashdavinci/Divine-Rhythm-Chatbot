@@ -4,25 +4,25 @@ A chatbot based on the RASA framework called Divine Rhythm.Divine Rhythm chatbot
 Python 3.8.10 pip 23.2.1
 ## Create virtual environment
 ### 1. Make a instance named venv
-python -m venv venv
+```python -m venv venv```
 ### 2.Enter the directory of the virtual environment
-cd venv\Scripts
+```cd venv\Scripts```
 ## 3.Activate virtual environment
-activate.bat
+```activate.bat```
 ## Install Rasa
-pip3 install rasa
+```pip3 install rasa```
 ## Initialize RASA
-rasa init
+```rasa init```
 ## Train the model
-rasa train
+```rasa train```
 ## Start server
 ### 1.Run action server
-rasa run actions
+```rasa run actions```
 ### 2.Run rasa server
-rasa run --enable-api --cors "*"
+```rasa run --enable-api --cors "*"```
 ## Install and Configure Nginx
 ### 1.Activate nginx
-start nginx
+```start nginx```
 ### 2.Modify the configuration file.
 ```server {
     listen 80;
@@ -47,5 +47,5 @@ location /socket.io {
 }
 ```
 ### 3.Reload nginx
-nginx.exe -s reload
+```nginx.exe -s reload```
 # Here you can open your browser to http://118.25.46.156:8088/, you can in the cloud for all to use to our bot.
