@@ -13,4 +13,38 @@ activate.bat
 pip3 install rasa
 ## Initialize RASA
 rasa init
-##
+## Train the model
+rasa train
+## Start server
+### 1.Run action server
+rasa run actions
+### 2.Run rasa server
+rasa run --enable-api --cors "*"
+## Install and Configure Nginx
+### 1.Activate nginx
+start nginx
+### 2.Modify the configuration file.
+server {
+    listen 80;
+    charset utf-8;
+location / {
+    root /app/;
+    index  index.html index.htm;
+}
+location /webhook {
+     proxy_pass http://rasa:5005;
+     proxy_set_header Host $host;
+}
+location /socket.io {
+    proxy_pass http://rasa:5005/socket.io;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+}
+}
+### 3.Reload nginx
+nginx.exe -s reload
+# Here you can open your browser to http://118.25.46.156:8088/, you can in the cloud for all to use to our bot.
