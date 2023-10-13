@@ -1,0 +1,82 @@
+version: "3.1"
+
+stories:
+
+- story: register user and save email
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: register_user
+  - action: utter_ask_email
+  - intent: provide_email
+    entities:
+     - email: "user@example.com"
+  - action: action_register_user
+  - action: utter_registration_successful
+
+- story: inquire free albums
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: GetInfo_freeAlbums
+  - action: utter_suggest_free_albums
+  - intent: deny
+  - action: utter_goodbye
+
+- story: inquire subscription information
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: GetInfo_subscription
+  - action: utter_provide_subscription_plans
+  - intent: inquire_specific_plan
+  - action: utter_provide_specific_plan_details
+
+- story: check order anomalies
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: GetInfo_order_anomalies
+  - action: utter_sorry_to_hear
+  - action: utter_ask_order_number
+  - intent: provide_order_number
+    entities:
+     - order_number: "123456"
+  - action: action_get_order_info_by_number
+ 
+
+- story: transfer to mannnual customer service
+  steps:
+  - intent: transfer_manual_customer_service
+  - action: utter_transfer_manual_customer_service
+
+
+- story: manual customer service communication channel request
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: transfer_manual_customer_service
+  - action: utter_transfer_manual_customer_service
+  - intent: complaint_service
+  - action: utter_ask_email_contact
+  - intent: provide_email_contact
+    entities:
+     - email: "user@example.com"
+  - action: utter_order_stored_for contact
+
+- story: user abuse
+  steps:
+  - intent: call_names
+  - action: utter_warning
+
+- story: good bye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+
+# - story: fall back
+#   steps:
+#   - intent: fallback
+#   - action: action_fallback

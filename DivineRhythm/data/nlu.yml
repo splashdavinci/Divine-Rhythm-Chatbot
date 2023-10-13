@@ -1,0 +1,153 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there 
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: register_user
+  examples: |
+    - I want to register a new account
+    - register
+    - new account
+    - a new account
+    - register a new account
+    - register a account
+
+- intent: provide_email
+  examples: |
+    - my email is [1@163.com](email)
+    - my email address is [1@163.com](email)
+    - my email id is [1@163.com](email)
+    - [1@163.com](email)
+    - [2@163.com](email)
+    - my email is [2@163.com](email)
+    - my email address is [2@163.com](email)
+    - my email id is [2@163.com](email)  
+    - [3@163.com](email)
+    - my email is [3@163.com](email)
+    - my email address is [3@163.com](email)
+    - my email id is [3@163.com](email)  
+    - [4@163.com](email)
+    - my email is [4@163.com](email)
+    - my email address is [4@163.com](email)
+    - my email id is [4@163.com](email) 
+    - [5@163.com](email)
+    - my email is [5@163.com](email)
+    - my email address is [5@163.com](email)
+    - my email id is [5@163.com](email) 
+
+- intent: GetInfo_freeAlbums
+  examples: |
+    - tell me about free albums
+    - free albums
+    - I want to know about free albums
+    - free
+    - free album
+
+- intent: GetInfo_subscription
+  examples: |
+    - What subscription plans do you offer?
+    - subscription
+    - subscription plans
+    - I want to know about subscription plans
+
+- intent: inquire_specific_plan
+  examples: |
+    - tell me about premium plan
+    - premium plan
+    - I want to know about premium plan
+    - plan
+
+
+- intent: GetInfo_order_anomalies
+  examples: |
+    - There is an issue with my order
+    - There is an anomaly in my order
+    - There is a problem with my order
+    - anomaly
+    - issue
+    - problem
+
+- intent: provide_order_number
+  examples: |
+    - my order number is [0001](order_number)
+    - order number is [0001](order_number)
+    - order number [0001](order_number)
+    - [0001](order_number)
+    - my order number is [0002](order_number)
+    - order number is [0002](order_number)
+    - order number [0002](order_number)
+    - [0002](order_number)
+    - [0003](order_number)
+    - [0004](order_number)
+
+- intent: transfer_manual_customer_service
+  examples: |
+    - manual customer service
+    - I'd like to transfer to human support
+    - I'd like to transfer to manual customer service
+    - human support
+
+- intent: complaint_service
+  examples: |
+    - I'm not satisfied with your service
+    - You didn't solve my problem
+    - I'm not happy with your service
+
+
+- intent: provide_email_contact
+  examples: |
+    - my email is [LLT@163.com](email)
+    - my email address is [LLT@163.com](email)
+    - my email id is [LLT@163.com](email)
+    - [LLT@163.com](email)
+    - [SNY@163.com](email)
+    - my email is [SNY@163.com](email)
+    - my email address is [SNY@163.com](email)
+    - my email id is [SNY@163.com](email)  
+    - [CS@163.com](email)
+    - my email is [CS@163.com](email)
+    - my email address is [CS@163.com](email)
+    - my email id is [CS@163.com](email) 
+
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - bye
+    - goodbye
+    - bye bye
+    - see you later
+    - by
+
+- intent: call_names
+  examples: |
+    - Fuck
+    - Shit
+    - Bitch
+    - Fool

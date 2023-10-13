@@ -1,0 +1,4 @@
+FROM rasa/rasa-sdk:latest
+USER root
+RUN pip install -i https://mirrors.aliyun.com/pypi/simple aio-pika tensorflow
+USER 1001

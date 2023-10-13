@@ -1,0 +1,103 @@
+version: "3.1"
+
+intents:
+  - greet
+  - register_user
+  - provide_email
+  - GetInfo_freeAlbums
+  - deny
+  - GetInfo_subscription
+  - GetInfo_order_anomalies
+  - provide_order_number
+  - provide_email_contact
+  - inquire_specific_plan
+  - transfer_manual_customer_service
+  - complaint_service
+  - call_names
+  - goodbye
+
+slots:
+  email:
+    type: text
+    influence_conversation: true
+    # value_type: unfeaturized
+    # auto_fill: false
+    mappings:
+      - type: from_entity
+        entity: email
+  order_number:
+    type: text
+    influence_conversation: true
+    # value_type: unfeaturized
+    # auto_fill: false
+    mappings:
+      - type: from_entity
+        entity: order_number
+
+entities:
+ - email
+ - order_number
+
+actions:
+  - utter_greet
+  - action_register_user
+  - action_get_order_info_by_number
+  - utter_warning
+  - utter_suggest_free_albums
+  - utter_provide_specific_plan_details
+  - utter_ask_order_number
+  - utter_sorry_to_hear
+  - utter_transfer_manual_customer_service
+  - utter_ask_email_contact
+  - utter_order_stored_for contact
+  - utter_registration_successful
+  - utter_goodbye
+  - utter_ask_email
+
+
+responses:
+  utter_greet:
+  - text: "Hello music lovers! Welcome  Divine Rhythm. Are you here to explore our huge collection or do you have any specific questions?"
+
+  utter_ask_email:
+  - text: "Please provide me with your email address."
+
+  utter_registration_successful:
+  - text: "An account has been registered for you. Please use the provided email to log in."
+
+  utter_suggest_free_albums:
+  - text: "As a special treat, you can choose any two albums from our collection for free. Do you want some advice?"
+
+  utter_goodbye:
+  - text: "Goodbye! Enjoy your music experience on Divine Rhythm."
+
+  utter_provide_subscription_plans:
+  - text: "We offer several subscription plans to cater to different types of music lovers:\n\n1. Basic: Unlimited listening to 2 genres of your choice.\n2. Premium: All-access pass, no advertisements.\n3. Family: Share the premium plan with up to five family members.\n\nDo you want to know more about these plans?"
+
+  utter_provide_specific_plan_details:
+  - text: "Our 'Premium Plan' costs $1.50 per month and includes benefits such as subscribing to more than two albums, downloading all your favorite songs, and more."
+  
+  utter_sorry_to_hear:
+  - text: "Oh, no! I'm really sorry to hear that.  Can you tell me what problem you face, so that I can help you effectively?"
+
+  utter_ask_order_number:
+  - text: "Please provide your order number so that I can assist you in checking the issue."
+
+  utter_transfer_manual_customer_service:
+  - text: "I'm sorry I couldn't solve your problem. We will transfer you to customer service. Please wait a moment."
+  
+  utter_ask_email_contact:
+  - text: "Please provide your email address. We will follow up with you via email."
+
+  utter_order_stored_for contact:
+  - text: "Thank you for providing your email address, we will contact you as soon as possible."
+
+  utter_warning:
+  - text: "Please don't talk like that. If you continue, we'll have to stop the conversation."
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
