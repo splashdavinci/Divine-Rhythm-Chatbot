@@ -24,7 +24,7 @@ rasa run --enable-api --cors "*"
 ### 1.Activate nginx
 start nginx
 ### 2.Modify the configuration file.
-server {
+```server {
     listen 80;
     charset utf-8;
 location / {
@@ -45,6 +45,7 @@ location /socket.io {
     proxy_set_header Connection "upgrade";
 }
 }
+```
 ### 3.Reload nginx
 nginx.exe -s reload
 # Here you can open your browser to http://118.25.46.156:8088/, you can in the cloud for all to use to our bot.
